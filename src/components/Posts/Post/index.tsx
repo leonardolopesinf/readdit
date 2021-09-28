@@ -1,5 +1,6 @@
 import React from "react";
 import { redditUrl } from "../../../services/reddit";
+import formatCreatedTime from "../../../utils/formatCreatedTime";
 import formatUrl from "../../../utils/formatUrl";
 import Picture from "../../Picture";
 import { PostContainer, PostDescription, PostThumbnail } from "./styles";
@@ -23,7 +24,9 @@ const Post: React.FC<Props> = ({ post }) => {
         <PostDescription>
           <span className="title">{post.title}</span>
           <div>
-            <span className="created">enviado há {post.created} por </span>
+            <span className="created">
+              enviado há {formatCreatedTime(post.created)} por{" "}
+            </span>
             <a
               target="_blank"
               rel="noreferrer"
