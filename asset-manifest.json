@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.js": "/readdit/static/js/main.eb67c9f9.chunk.js",
+    "main.js.map": "/readdit/static/js/main.eb67c9f9.chunk.js.map",
+    "runtime-main.js": "/readdit/static/js/runtime-main.e3b95278.js",
+    "runtime-main.js.map": "/readdit/static/js/runtime-main.e3b95278.js.map",
+    "static/css/2.58a45539.chunk.css": "/readdit/static/css/2.58a45539.chunk.css",
+    "static/js/2.1f6bcb56.chunk.js": "/readdit/static/js/2.1f6bcb56.chunk.js",
+    "static/js/2.1f6bcb56.chunk.js.map": "/readdit/static/js/2.1f6bcb56.chunk.js.map",
+    "static/js/3.f1e64696.chunk.js": "/readdit/static/js/3.f1e64696.chunk.js",
+    "static/js/3.f1e64696.chunk.js.map": "/readdit/static/js/3.f1e64696.chunk.js.map",
+    "index.html": "/readdit/index.html",
+    "static/css/2.58a45539.chunk.css.map": "/readdit/static/css/2.58a45539.chunk.css.map",
+    "static/js/2.1f6bcb56.chunk.js.LICENSE.txt": "/readdit/static/js/2.1f6bcb56.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e3b95278.js",
+    "static/css/2.58a45539.chunk.css",
+    "static/js/2.1f6bcb56.chunk.js",
+    "static/js/main.eb67c9f9.chunk.js"
+  ]
+}
