@@ -1,8 +1,8 @@
 {
-  "name": "react-reddit",
+  "name": "readdit",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://leonardolopesinf.github.io/react-reddit",
+  "homepage": "https://leonardolopesinf.github.io/readdit",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
