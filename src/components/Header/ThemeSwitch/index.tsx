@@ -22,10 +22,11 @@ const ThemeSwitch: React.FC = () => {
 
   return (
     <SwitchContainer>
-      <SwitchInput className="theme-switch" onClick={toggleSwitch}>
+      <SwitchInput data-testid="theme-switch" onClick={toggleSwitch}>
         <span className="moon">&#127772;</span>
         <span className="sun">&#127774;</span>
         <input
+          data-testid="theme-input"
           ref={inputRef}
           defaultValue={themeName}
           defaultChecked={switchValue}
