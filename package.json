@@ -26,7 +26,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test-unit": "yarn cypress open-ct",
+    "test": "yarn cypress open",
     "eject": "react-scripts eject",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build"
@@ -50,7 +51,10 @@
     ]
   },
   "devDependencies": {
+    "@cypress/react": "^5.10.0",
+    "@cypress/webpack-dev-server": "^1.6.0",
     "@types/styled-components": "^5.1.14",
+    "cypress": "^8.5.0",
     "gh-pages": "^3.2.3"
   }
 }
