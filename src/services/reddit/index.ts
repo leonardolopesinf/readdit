@@ -2,34 +2,29 @@ import axios from "axios";
 
 export const redditUrl = "https://www.reddit.com";
 
-export const getPosts = (
+export const getPosts = async (
   filter: Reddit.PostFilter,
   limit: number,
   after?: string
 ) => {
-  return new Promise<Reddit.Post[]>((resolve, reject) => {
+  try {
     let requestUrl = `${redditUrl}/r/reactjs/${filter}.json?limit=${limit}`;
 
     if (after) requestUrl += `&after=${after}`;
 
-    axios
-      .get(requestUrl)
-      .then((response) => {
-        const subreddit = response.data;
+    const subreddit = (await axios.get(requestUrl)).data;
 
-        const posts: Reddit.Post[] = subreddit.data.children;
+    const posts: Reddit.Post[] = subreddit.data.children;
 
-        resolve(posts);
-      })
-      .catch((error) => {
-        const { status } = error.response;
+    return posts;
+  } catch (error: any) {
+    const { status } = error.response;
 
-        const message =
-          status === 404
-            ? "Não foi possível encontrar os posts."
-            : "Ocorreu um erro ao tentar buscar os posts.";
+    const message =
+      status === 404
+        ? "Não foi possível encontrar os posts."
+        : "Ocorreu um erro ao tentar buscar os posts.";
 
-        reject(message);
-      });
-  });
+    throw new Error(message);
+  }
 };
