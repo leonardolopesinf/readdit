@@ -12,7 +12,7 @@ export const SwitchInput = styled.div`
   display: flex;
   align-items: center;
 
-  width: 6.2rem;
+  width: 5.2rem;
   height: 3rem;
 
   padding: 0 0.2rem;
@@ -21,16 +21,19 @@ export const SwitchInput = styled.div`
 
   background: ${(props) => darken(0.15, props.theme.colors.primary)};
 
-  font-size: 2rem;
+  font-size: 1.8rem;
 
   cursor: pointer;
   user-select: none;
 
   .moon {
-    margin-right: auto;
+    position: absolute;
+    left: 0;
   }
 
   .sun {
+    position: absolute;
+    right: 0;
   }
 
   input {
@@ -38,9 +41,6 @@ export const SwitchInput = styled.div`
   }
 
   .circle {
-    position: absolute;
-    left: 0.3rem;
-
     width: 2.6rem;
     height: 2.6rem;
 
@@ -48,10 +48,12 @@ export const SwitchInput = styled.div`
 
     background: ${(props) => lighten(0.3, props.theme.colors.secondary)};
 
-    transition: all 0.5s ease;
+    transition: margin-left 0.5s ease;
+
+    z-index: 1;
   }
 
   input:checked + .circle {
-    left: 3.3rem;
+    margin-left: 50%;
   }
 `;
