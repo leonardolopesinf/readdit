@@ -9,7 +9,7 @@ const filterNames: Posts.FilterNames = {
 };
 
 const PostFilter: React.FC = () => {
-  const { get: filter, set: setFilter } = useContext(FilterContext);
+  const { filter, setFilter } = useContext(FilterContext);
 
   const handleChangeFilter = useCallback(
     (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {

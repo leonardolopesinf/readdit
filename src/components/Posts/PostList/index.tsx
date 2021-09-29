@@ -9,7 +9,7 @@ import ShowMore from "../ShowMore";
 import { PostListContainer } from "./styles";
 
 const PostList: React.FC = () => {
-  const { get: filter } = useContext(FilterContext);
+  const { filter } = useContext(FilterContext);
 
   const [posts, setPosts] = useState<Reddit.Post[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
