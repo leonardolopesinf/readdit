@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
-import { ThemeContext } from "styled-components";
+import { ThemeContext } from "../../../context/ThemeContext";
 import {
   PostSkeletonColumn,
   PostSkeletonContainer,
@@ -9,7 +9,7 @@ import {
 } from "./styles";
 
 const PostSkeleton: React.FC = () => {
-  const theme = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   const generateSkeletons = () => {
     const skeletons = [];

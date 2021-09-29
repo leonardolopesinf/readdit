@@ -1,22 +1,18 @@
 import React, { useContext, useMemo } from "react";
-import { ThemeContext } from "styled-components";
+import { ThemeContext } from "../../../context/ThemeContext";
 import { SwitchContainer, SwitchInput } from "./styles";
 
-type Props = {
-  onChange: () => void;
-};
+const ThemeSwitch: React.FC = () => {
+  const { themeName, toggleTheme } = useContext(ThemeContext);
 
-const ThemeSwitch: React.FC<Props> = ({ onChange }) => {
-  const { title: theme } = useContext(ThemeContext);
-
-  const switchValue = useMemo(() => theme === "dark", [theme]);
+  const switchValue = useMemo(() => themeName === "dark", [themeName]);
 
   return (
     <SwitchContainer>
-      <SwitchInput onClick={onChange}>
+      <SwitchInput onClick={toggleTheme}>
         <span className="moon">&#127772;</span>
         <span className="sun">&#127774;</span>
-        <input checked={switchValue} type="checkbox" onChange={onChange} />
+        <input checked={switchValue} type="checkbox" />
         <div className="circle" />
       </SwitchInput>
     </SwitchContainer>

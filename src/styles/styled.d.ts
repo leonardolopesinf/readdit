@@ -1,7 +1,9 @@
 import "styled-components";
 
+type ThemeName = "dark" | "light";
+
 type Theme = {
-  title: string;
+  name: ThemeName;
 
   colors: {
     primary: string;
@@ -22,4 +24,6 @@ type Theme = {
 
 declare module "styled-components" {
   export interface DefaultTheme extends Theme {}
+
+  export type ThemeName = ThemeName;
 }

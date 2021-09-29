@@ -2,7 +2,7 @@ import { darken, lighten } from "polished";
 import { DefaultTheme } from "styled-components";
 
 const light: DefaultTheme = {
-  title: "light",
+  name: "light",
 
   colors: {
     primary: "#6324C6",
@@ -22,7 +22,7 @@ const light: DefaultTheme = {
 };
 
 const dark: DefaultTheme = {
-  title: "dark",
+  name: "dark",
 
   colors: {
     primary: "#6324C6",
