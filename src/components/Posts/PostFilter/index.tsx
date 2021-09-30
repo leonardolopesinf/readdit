@@ -21,7 +21,7 @@ const PostFilter: React.FC = () => {
   );
 
   return (
-    <PostFilterContainer>
+    <PostFilterContainer data-testid="filter-buttons">
       {Object.keys(filterNames).map((buttonValue, index) => {
         const buttonText = filterNames[buttonValue as Reddit.PostFilter];
 

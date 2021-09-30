@@ -2,6 +2,8 @@
   "baseUrl": "http://localhost:3000/readdit",
   "supportFile": false,
   "fixturesFolder": false,
+  "viewportWidth": 800,
+  "viewportHeight": 600,
   "component": {
     "testFiles": "**/*.test.{js,ts,jsx,tsx}",
     "componentFolder": "src"
