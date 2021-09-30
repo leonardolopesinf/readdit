@@ -12,7 +12,7 @@ export const getPosts = async (
 
     if (after) requestUrl += `&after=${after}`;
 
-    const subreddit = (await axios.get(requestUrl)).data;
+    const subreddit = (await axios.get<Reddit.Subreddit>(requestUrl)).data;
 
     const posts: Reddit.Post[] = subreddit.data.children;
 

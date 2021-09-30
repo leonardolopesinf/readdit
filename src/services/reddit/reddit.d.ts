@@ -14,4 +14,10 @@ declare namespace Reddit {
     kind: string;
     data: PostData;
   };
+
+  type Subreddit = {
+    data: {
+      children: Post[];
+    };
+  };
 }
