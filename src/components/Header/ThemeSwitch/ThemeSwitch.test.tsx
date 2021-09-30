@@ -14,11 +14,11 @@ describe("Switch", () => {
     cy.get("[data-testid=theme-input]").as("input");
   });
 
-  it("should input initial checked to be false", () => {
+  it("should have the input initial checked to be false", () => {
     cy.get("@input").should("not.be.checked");
   });
 
-  it("should input initial value to be light", () => {
+  it("should have the input initial value to be light", () => {
     cy.get("@input").should("have.value", "light");
   });
 
