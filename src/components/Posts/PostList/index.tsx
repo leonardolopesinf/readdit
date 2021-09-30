@@ -44,12 +44,18 @@ const PostList: React.FC = () => {
     setLoading(true);
 
     getRedditPosts().finally(() => setLoading(false));
+
+    return () => {
+      setLoading(false);
+    };
   }, [getRedditPosts]);
 
   return (
-    <PostListContainer>
+    <PostListContainer data-testid="post-list">
       {!loading ? (
-        posts.map(({ data: post }) => <Post post={post} key={post.name} />)
+        posts.map(({ data: post }, index) => (
+          <Post post={post} key={post.name + index} />
+        ))
       ) : (
         <PostSkeleton />
       )}
