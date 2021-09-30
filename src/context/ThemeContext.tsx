@@ -5,6 +5,7 @@ import {
   ThemeProvider as StyledThemeProvider,
 } from "styled-components";
 import useTheme from "../hooks/useTheme";
+import GlobalStyle from "../styles/GlobalStyle";
 
 type ThemeContextType = {
   themeName: ThemeName;
@@ -19,7 +20,12 @@ const ThemeProvider: React.FC = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={{ themeName, theme, toggleTheme }}>
-      <StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>
+      <StyledThemeProvider theme={theme}>
+        <>
+          <GlobalStyle />
+          {children}
+        </>
+      </StyledThemeProvider>
     </ThemeContext.Provider>
   );
 };
