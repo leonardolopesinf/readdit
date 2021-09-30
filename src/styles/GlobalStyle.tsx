@@ -32,6 +32,10 @@ const GlobalStyle = createGlobalStyle`
         text-decoration: none;
     }
 
+    ul{
+        list-style-type: none;
+    }
+
     .Toastify__toast-body {
         font-weight: 600;
         font-size: 1.3rem;

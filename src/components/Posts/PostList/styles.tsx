@@ -7,8 +7,6 @@ export const PostListContainer = styled.ul`
 
   width: 100%;
 
-  list-style-type: none;
-
   li {
     width: 100%;
   }
