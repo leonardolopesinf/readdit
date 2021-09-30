@@ -16,7 +16,7 @@ const PostSkeleton: React.FC = () => {
 
     for (let i = 0; i < 10; i++) {
       skeletons.push(
-        <PostSkeletonItem key={i}>
+        <PostSkeletonItem data-testid="skeleton" key={i}>
           <div className="divider" />
           <PostSkeletonRow>
             <div className="image">
@@ -42,7 +42,7 @@ const PostSkeleton: React.FC = () => {
   };
 
   return (
-    <PostSkeletonContainer>
+    <PostSkeletonContainer data-testid="post-skeleton">
       <SkeletonTheme
         color={theme.colors.skeletonColor}
         highlightColor={theme.colors.skeletonHightlight}
