@@ -2,22 +2,25 @@ import React, { SyntheticEvent, useCallback } from "react";
 
 type Props = {
   alt: string;
-  defaultSrc: string;
   src: string;
 };
 
-const Picture: React.FC<Props> = ({ alt, defaultSrc, src }) => {
+const Picture: React.FC<Props> = ({ alt, src }) => {
   const handleError = useCallback(
     (event: SyntheticEvent<HTMLImageElement, Event>) => {
       const img = event.currentTarget;
+      const defaultImg = "https://cdn-icons-png.flaticon.com/512/52/52053.png";
+
       img.onerror = null;
-      img.src = defaultSrc;
+      img.src = defaultImg;
       img.className = "error-image";
     },
-    [defaultSrc]
+    []
   );
 
-  return <img src={src} alt={alt} onError={handleError} />;
+  return (
+    <img data-testid="picture" src={src} alt={alt} onError={handleError} />
+  );
 };
 
 export default Picture;

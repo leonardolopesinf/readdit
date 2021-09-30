@@ -11,20 +11,16 @@ type Props = {
 
 const Post: React.FC<Props> = ({ post }) => {
   return (
-    <li>
+    <li data-testid="post">
       <div className="divider" />
       <PostContainer>
         <PostThumbnail>
-          <Picture
-            defaultSrc="https://cdn-icons-png.flaticon.com/512/52/52053.png"
-            src={post.thumbnail}
-            alt="post thumbnail"
-          />
+          <Picture src={post.thumbnail} alt="post thumbnail" />
         </PostThumbnail>
         <PostDescription>
           <span className="title">{post.title}</span>
           <div>
-            <span className="created">
+            <span className="created" data-testid="post-send-date">
               enviado há {formatCreatedTime(post.created)} por{" "}
             </span>
             <a
@@ -37,6 +33,7 @@ const Post: React.FC<Props> = ({ post }) => {
             </a>
           </div>
           <a
+            data-testid="post-url"
             target="_blank"
             rel="noreferrer"
             href={`${redditUrl}${post.permalink}`}
