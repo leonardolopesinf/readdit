@@ -17,14 +17,14 @@ const ShowMore: React.FC<Props> = ({ onClick }) => {
   }, [onClick]);
 
   return (
-    <ShowMoreButton onClick={handleClick}>
+    <ShowMoreButton onClick={handleClick} data-testid="show-more-button">
       {!loading ? (
         <>
           <div className="plus">
             <div className="bar-one" />
             <div className="bar-two" />
           </div>
-          Ver Mais
+          <span>Ver Mais</span>
         </>
       ) : (
         <img
