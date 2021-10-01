@@ -26,8 +26,11 @@ const PostList: React.FC = () => {
           posts = removeArrayExcess(posts, postsLimit);
 
         setPosts((state) => (lastPost ? [...state, ...posts] : posts));
-      } catch (error) {
-        toast(error as string, { type: "error" });
+      } catch (error: any) {
+        const { message } = error;
+
+        toast(message, { type: "error" });
+
         setPosts([]);
       }
     },
