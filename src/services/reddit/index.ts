@@ -18,7 +18,7 @@ export const getPosts = async (
 
     return posts;
   } catch (error: any) {
-    const { status } = error.response;
+    const status = error?.response?.status;
 
     const message =
       status === 404
