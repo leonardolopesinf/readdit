@@ -23,10 +23,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test-unit": "yarn cypress open-ct",
-    "test": "yarn cypress open",
+    "test-unit": "npx cypress open-ct",
+    "test": "npx cypress open",
     "eject": "react-scripts eject",
-    "predeploy": "yarn build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
