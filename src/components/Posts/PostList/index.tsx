@@ -13,6 +13,7 @@ const PostList: React.FC = () => {
   const { filter } = useContext(FilterContext);
 
   const [posts, setPosts] = useState<Reddit.Post[]>([]);
+  const [noMorePosts, setNoMorePosts] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
 
   const getRedditPosts = useCallback(
@@ -24,6 +25,8 @@ const PostList: React.FC = () => {
 
         if (!lastPost && posts.length > postsLimit)
           posts = removeArrayExcess(posts, postsLimit);
+
+        if (posts.length < postsLimit) setNoMorePosts(true);
 
         setPosts((state) => (lastPost ? [...state, ...posts] : posts));
       } catch (error: any) {
@@ -68,7 +71,9 @@ const PostList: React.FC = () => {
           </span>
         )}
       </LoadingContainer>
-      {posts.length >= 10 && <ShowMore onClick={handleShowMore} />}
+      {(posts.length >= 10 || noMorePosts) && (
+        <ShowMore onClick={handleShowMore} />
+      )}
     </PostListContainer>
   );
 };
