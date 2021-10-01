@@ -5,8 +5,7 @@ const mountPicture = (src: string) => mount(<Picture src={src} alt="img" />);
 
 describe("Skeleton", () => {
   it("should render src if it loads", () => {
-    const imageSrc =
-      "https://lh3.googleusercontent.com/proxy/pD4CF7jHfC4f3T1qeBWmd3n9JE0r_x1VI2AMvrqHIBJszzTnbay9b-jna_ctJrgZf6TRq6hOr_pVAt6Fxd_zUQC6TnA";
+    const imageSrc = `https://img.pokemondb.net/artwork/mudkip.jpg`;
 
     mountPicture(imageSrc);
     cy.wait(500);
