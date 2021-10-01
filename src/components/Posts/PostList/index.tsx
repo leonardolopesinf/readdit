@@ -66,7 +66,7 @@ const PostList: React.FC = () => {
             <Post post={post} key={post.name + index} />
           ))
         ) : (
-          <span data-testid="error-message" className="eror-message">
+          <span data-testid="error-message" className="error-message">
             Nenhum post foi encontrado.
           </span>
         )}
