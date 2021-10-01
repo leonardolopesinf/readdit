@@ -55,6 +55,7 @@
     "@cypress/webpack-dev-server": "^1.6.0",
     "@types/styled-components": "^5.1.14",
     "cypress": "^8.5.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "gh-pages": "^3.2.3"
   }
 }
