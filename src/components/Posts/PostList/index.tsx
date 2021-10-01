@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import { FilterContext } from "../../../context/FilterContext";
 import { getPosts } from "../../../services/reddit";
 import removeArrayExcess from "../../../utils/removeArrayExcess";
+import LoadingContainer from "../../LoadingContainer";
 import Post from "../Post";
 import PostSkeleton from "../PostSkeleton";
 import ShowMore from "../ShowMore";
@@ -12,7 +13,7 @@ const PostList: React.FC = () => {
   const { filter } = useContext(FilterContext);
 
   const [posts, setPosts] = useState<Reddit.Post[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
 
   const getRedditPosts = useCallback(
     async (lastPost?: string) => {
@@ -27,6 +28,7 @@ const PostList: React.FC = () => {
         setPosts((state) => (lastPost ? [...state, ...posts] : posts));
       } catch (error) {
         toast(error as string, { type: "error" });
+        setPosts([]);
       }
     },
     [filter]
@@ -52,14 +54,17 @@ const PostList: React.FC = () => {
 
   return (
     <PostListContainer data-testid="post-list">
-      {!loading ? (
-        posts.map(({ data: post }, index) => (
-          <Post post={post} key={post.name + index} />
-        ))
-      ) : (
-        <PostSkeleton />
-      )}
-
+      <LoadingContainer displayLoading={loading} loading={PostSkeleton}>
+        {posts.length > 0 ? (
+          posts?.map(({ data: post }, index) => (
+            <Post post={post} key={post.name + index} />
+          ))
+        ) : (
+          <span data-testid="error-message" className="eror-message">
+            Nenhum post foi encontrado.
+          </span>
+        )}
+      </LoadingContainer>
       {posts.length >= 10 && <ShowMore onClick={handleShowMore} />}
     </PostListContainer>
   );

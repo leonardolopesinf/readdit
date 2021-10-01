@@ -15,4 +15,14 @@ export const PostListContainer = styled.ul`
     height: 0.1rem;
     background: ${(props) => props.theme.colors.gray};
   }
+
+  .error-message {
+    margin-top: 1.5%;
+
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2.5rem;
+
+    color: ${(props) => props.theme.colors.text};
+  }
 `;
